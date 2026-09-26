@@ -112,7 +112,7 @@
     text-align: center;
 
     /* Фон */
-    background-image: url('fon1.jpg');
+    background-image: url('fon11.jpg');
     background-repeat: no-repeat;
     background-position: center bottom;  /* рисунок из низа картинки — внизу секции */
     background-size: cover;              /* или contain — см. ниже */
@@ -196,7 +196,7 @@
             align-items: center;
             text-align: center;
 
-            background-image: url('fon2.jpg');
+            background-image: url('fon22.jpg');
             background-repeat: no-repeat;
             background-position: center bottom;
             background-size: cover;
@@ -747,7 +747,7 @@ select.rsvp-input {
         <!-- Кнопка музыки ПОД текстом -->
         <div class="music-wrapper">
             <img src="music.png" alt="Включить музыку" class="music-btn" id="musicBtn">
-            <div class="music-label">включите музыку</div>
+            <div class="music-label" id="musicLabel">включить музыку</div>
         </div>
 
         <!-- <p class="bottom-text">
@@ -1015,6 +1015,7 @@ select.rsvp-input {
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const musicBtn = document.getElementById('musicBtn');
+        const musicLabel = document.getElementById('musicLabel');
         const music = document.getElementById('weddingMusic');
         let isPlaying = false;
 
@@ -1022,11 +1023,11 @@ select.rsvp-input {
             if (isPlaying) {
                 music.pause();
                 musicBtn.classList.remove('playing');
-                musicBtn.style.opacity = '1';
+                musicLabel.textContent = 'включите музыку';
             } else {
                 music.play().then(() => {
                     musicBtn.classList.add('playing');
-                    musicBtn.style.opacity = '1';
+                    musicLabel.textContent = 'выключить музыку';
                 }).catch(error => {
                     console.log('Ошибка воспроизведения:', error);
                     alert('Не удалось включить музыку. Проверьте, что файл 1.mp3 находится в папке с сайтом.');
