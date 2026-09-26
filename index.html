@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свадебное приглашение</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Сброс стилей */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            color: #1a1a1ab5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            width: 100%;
+            max-width: 480px;
+            min-height: 100vh;
+            padding: 160px 25px 0 25px;   /* ← было 50px, стало 120px */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+
+
+        .top-text {
+            font-family: 'Caveat', cursive;
+            font-size: 34px;
+            line-height: 1.1;
+            margin-bottom: 35px;
+            color: #1a1a1ab5;
+            font-weight: 400;
+        }
+
+        .hero-image-wrapper {
+            width: 100%;
+            max-width: 420px !important;   /* ← добавьте это */
+            margin: 0 auto 35px auto;  /* ← auto по бокам для центрирования */
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .names-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            font-family: 'Caveat', cursive;
+            font-size: 42px;
+            line-height: 1;
+            color: #1a1a1ab5;
+        }
+
+        .heart-icon {
+            width: 38px;
+            height: auto;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        .bottom-text {
+            font-family: 'Caveat', cursive;
+            font-size: 30px;
+            line-height: 1.2;
+            color: #1a1a1ab5;
+            max-width: 95%;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.1); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.1); }
+            70% { transform: scale(1); }
+        }
+
+        /* ===== ВТОРАЯ СЕКЦИЯ (ПРИГЛАШЕНИЕ + КАЛЕНДАРЬ) ===== */
+.invitation-section {
+    width: 100%;
+    max-width: 480px;
+    padding: 60px 25px 140px 25px;   /* ← увеличили нижний отступ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    /* Фон */
+    background-image: url('fon1.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;  /* рисунок из низа картинки — внизу секции */
+    background-size: cover;              /* или contain — см. ниже */
+    padding-bottom: 290px;  /* средне */
+}
+
+        .invitation-text {
+            font-family: 'Caveat', cursive;
+            font-size: 26px; 
+            line-height: 1.4;
+            max-width: 280px;
+            margin: 0 auto 50px auto;
+            color: #1a1a1ab5;
+        }
+
+        .calendar {
+            width: 100%;
+            max-width: 340px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .calendar-header {
+            font-family: 'Caveat', cursive;
+            font-size: 28px;
+            color: #1a1a1ab5;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px 0;
+        }
+
+        .calendar-grid span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 300;
+            height: 36px;
+            color: #1a1a1ab5;
+        }
+
+        .day-name {
+            font-weight: 400;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.6;
+            height: 26px !important;
+        }
+
+        .wedding-day {
+            background-color: #C88A8A;
+            color: #ffffff !important;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            margin: 0 auto;
+            font-weight: 400;
+            box-shadow: 0 4px 10px rgba(200, 138, 138, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(200, 138, 138, 0.5); }
+            70% { box-shadow: 0 0 0 10px rgba(200, 138, 138, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(200, 138, 138, 0); }
+        }
+
+        /* ===== ТРЕТЬЯ СЕКЦИЯ (ПЛАН ДНЯ) ===== */
+        .schedule-section {
+            width: 100%;
+            max-width: 480px;
+            padding: 40px 25px 150px 25px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            background-image: url('fon2.jpg');
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-size: cover;
+            padding-bottom: 380px;  /* много */
+        }
+
+        .schedule-title {
+            font-family: 'Caveat', cursive;
+            font-size: 42px;
+            color: #1a1a1ab5;
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+
+        .timeline {
+            width: 100%;
+            max-width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .timeline-item {
+            display: flex;
+            flex-direction: column; /* Иконка НАД текстом */
+            align-items: center;
+            position: relative;
+        }
+
+        /* Блок с иконкой — большой */
+        .timeline-icon {
+            width: 90px;
+            height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+        .timeline-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Блок с текстом */
+        .timeline-content {
+            text-align: center;
+        }
+
+        .timeline-time {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+            line-height: 1;
+        }
+
+        .timeline-desc {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #1a1a1ab5;
+            line-height: 1.3;
+        }
+
+        /* Адаптив для очень маленьких экранов */
+        @media (max-width: 360px) {
+            .hero-section { padding: 30px 15px; }
+            .top-text { font-size: 28px; }
+            .names-block { font-size: 34px; gap: 8px; }
+            .bottom-text { font-size: 26px; }
+            .heart-icon { width: 30px; }
+            
+            .invitation-section { padding: 40px 15px 60px 15px; }
+            .invitation-text { font-size: 22px; max-width: 240px; margin-bottom: 40px; }
+            .calendar { max-width: 300px; }
+            .calendar-grid span { font-size: 13px; height: 32px; }
+            .day-name { font-size: 10px; height: 22px !important; }
+            .wedding-day { width: 32px; height: 32px; }
+
+            .schedule-title { font-size: 34px; margin-bottom: 40px; }
+            .timeline { max-width: 260px; gap: 40px; }
+            .timeline-icon { width: 70px; height: 70px; margin-bottom: 12px; }
+            .timeline-time { font-size: 18px; }
+            .timeline-desc { font-size: 12px; }
+        }
+
+
+        /* ===== СЕКЦИЯ ДРЕСС-КОД ===== */
+/* ===== СЕКЦИЯ ДРЕСС-КОД ===== */
+.dresscode-section {
+    width: 100%;
+    max-width: 480px;
+    padding: 40px 25px 150px 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    background-image: url('fon3.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+
+    padding-bottom: 200px;  /* много */
+}
+
+
+
+.dresscode-title {
+    font-family: 'Caveat', cursive;
+    font-size: 42px;
+    font-weight: 400;
+    color: #1a1a1ab5;
+    margin-bottom: 40px;
+}
+
+.dresscode-text {
+    font-family: 'Caveat', cursive;
+    font-size: 26px;
+    line-height: 1.4;
+    max-width: 280px;
+    margin: 0 auto 40px auto;
+    color: #1a1a1ab5;
+}
+
+.dresscode-image {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* Обёртка для кнопки музыки */
+.music-wrapper {
+    display: flex;
+    flex-direction: column;   /* ← ВОТ ЭТО ГЛАВНОЕ */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;                /* отступ между картинкой и текстом */
+    margin-top: 40px;
+    margin-bottom: 25px;
+    transform: translateY(-40px);
+}
+
+/* Кнопка музыки — больше размер */
+.music-btn {
+    width: 120px;            /* ← увеличили размер */
+    height: 120px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: block;
+    object-fit: contain;
+
+    /* Убираем синее выделение при тапе на мобильных */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+.music-btn:hover {
+    transform: scale(1.08);
+    opacity: 0.85;
+}
+
+.music-btn.playing {
+    animation: musicPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.12); }
+    100% { transform: scale(1); }
+}
+
+/* На всякий случай — убираем синюю подсветку у всех элементов */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.music-label {
+    display: block;          /* текст — отдельный блок ПОД картинкой */
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: #1a1a1ab5;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+/* ===== СЕКЦИЯ ПОЖЕЛАНИЯ ===== */
+.wishes-section {
+    width: 100%;
+    max-width: 480px;
+    padding: 60px 25px 150px 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    background-image: url('fon4.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+
+    padding-bottom: 200px;   /* отступ под рисунок внизу */
+}
+
+.wishes-title {
+    font-family: 'Caveat', cursive;
+    font-size: 42px;
+    font-weight: 400;
+    color: #1a1a1ab5;
+    margin-bottom: 50px;
+}
+
+.wishes-list {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;          /* расстояние между блоками */
+}
+
+.wish-item {
+    text-align: center;
+}
+
+.wish-text {
+    font-family: 'Caveat', cursive;
+    font-size: 26px;
+    line-height: 1.4;
+    color: #1a1a1ab5;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+/* ===== СЕКЦИЯ ОБРАТНОГО ОТСЧЁТА ===== */
+.countdown-section {
+    width: 100%;
+    max-width: 480px;
+    padding: 60px 25px 100px 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.countdown-title {
+    font-family: 'Caveat', cursive;
+    font-size: 42px;
+    font-weight: 400;
+    color: #1a1a1ab5;
+    margin-bottom: 50px;
+    max-width: 320px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;              /* ← уменьшили расстояние между кругами */
+    flex-wrap: nowrap;      /* ← запрещаем перенос на новую строку */
+    width: 100%;
+    max-width: 440px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;         /* ← не даём элементам растягиваться/сжиматься */
+}
+
+/* Круг с числом внутри */
+.countdown-value {
+    width: 70px;            /* ← было 90px */
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url('kr.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;        /* ← уменьшили, чтобы 3 цифры влезали */
+    font-weight: 400;
+    color: #1a1a1a;
+    line-height: 1;
+    padding-bottom: 2px;
+}
+
+.countdown-label {
+    font-family: 'Caveat', cursive;
+    font-size: 18px;        /* ← чуть меньше */
+    color: #1a1a1ab5;
+    white-space: nowrap;    /* ← подпись не переносится */
+}
+
+/* Адаптив для маленьких экранов */
+@media (max-width: 360px) {
+    .countdown-section { padding: 40px 15px 60px 15px; }
+    .countdown-title { font-size: 34px; margin-bottom: 40px; }
+    .countdown { gap: 6px; }
+    .countdown-value { width: 58px; height: 58px; font-size: 14px; }
+    .countdown-label { font-size: 15px; }
+}
+
+
+/* ===== СЕКЦИЯ RSVP ===== */
+.rsvp-section {
+    width: 100%;
+    max-width: 480px;
+    padding: 60px 25px 150px 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    background-image: url('fon5.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+
+    padding-bottom: 220px;
+}
+
+.rsvp-title {
+    font-family: 'Caveat', cursive;
+    font-size: 42px;
+    font-weight: 400;
+    color: #1a1a1ab5;
+    margin-bottom: 30px;
+}
+
+.rsvp-text {
+    font-family: 'Caveat', cursive;
+    font-size: 26px;
+    line-height: 1.4;
+    color: #1a1a1ab5;
+    max-width: 300px;
+    margin: 0 auto 45px auto;
+}
+
+.rsvp-form {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    text-align: left;
+}
+
+.rsvp-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rsvp-label {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: #1a1a1ab5;
+    text-align: left;
+    padding-left: 4px;
+}
+
+.rsvp-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.rsvp-input::placeholder {
+    color: #9a9a9a;
+    font-weight: 300;
+}
+
+.rsvp-input:focus {
+    border-color: #1a1a1a;
+    box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.08);
+}
+
+/* Стрелка для select — чёрная */
+select.rsvp-input {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%231a1a1a' d='M6 8 0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+/* Радиокнопки */
+.rsvp-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rsvp-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #1a1a1a;
+    padding: 10px 14px;
+    background-color: #ffffff;
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.rsvp-radio input[type="radio"] {
+    accent-color: #1a1a1a;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.rsvp-radio:has(input[type="radio"]:checked) {
+    border-color: #1a1a1a;
+    background-color: #f5f5f5;
+}
+
+/* Кнопка отправки — чёрно-белая */
+.rsvp-button {
+    margin-top: 10px;
+    padding: 15px 20px;
+    width: 100%;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+
+    background-color: #1a1a1a;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.rsvp-button:hover {
+    background-color: #333333;
+}
+
+.rsvp-button:active {
+    transform: scale(0.98);
+}
+
+/* Сообщение после отправки */
+.rsvp-success {
+    display: none;
+    font-family: 'Caveat', cursive;
+    font-size: 26px;
+    line-height: 1.4;
+    color: #1a1a1a;
+    max-width: 280px;
+    margin: 30px auto 0 auto;
+}
+
+.rsvp-success.visible {
+    display: block;
+}
+
+/* Адаптив */
+@media (max-width: 360px) {
+    .rsvp-section { padding: 40px 15px 60px 15px; }
+    .rsvp-title { font-size: 34px; margin-bottom: 25px; }
+    .rsvp-text { font-size: 22px; margin-bottom: 35px; }
+    .rsvp-form { max-width: 280px; gap: 18px; }
+    .rsvp-label { font-size: 20px; }
+    .rsvp-input { padding: 10px 14px; font-size: 14px; }
+    .rsvp-radio { font-size: 13px; padding: 9px 12px; }
+    .rsvp-button { padding: 13px 18px; font-size: 12px; }
+    .rsvp-success { font-size: 22px; }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero-section">
+        <div class="names-block">
+            <span>Сергей и Мелена</span>
+            <span>=</span>
+            <img src="1.svg" alt="Сердце" class="heart-icon">
+        </div>
+
+        <div class="hero-image-wrapper">
+            <img src="1111.png" alt="Андрей и Регина в детстве" class="hero-image">
+        </div>
+
+        <!-- <div class="names-block">
+            <span>Сергей и Мелена</span>
+            <span>=</span>
+            <img src="1.svg" alt="Сердце" class="heart-icon">
+        </div> -->
+
+        <!-- Кнопка музыки ПОД текстом -->
+        <div class="music-wrapper">
+            <img src="music.png" alt="Включить музыку" class="music-btn" id="musicBtn">
+            <div class="music-label">включите музыку</div>
+        </div>
+
+        <!-- <p class="bottom-text">
+            что однажды обменяются<br>
+            кольцами!
+        </p> -->
+
+
+    </section>
+
+    <!-- ===== ВТОРАЯ СЕКЦИЯ ===== -->
+    <section class="invitation-section">
+        <p class="invitation-text">
+            Дорогие гости!<br>
+            Мы будем очень рады
+            разделить с вами
+            самый счастливый день
+            нашей жизни!
+        </p>
+
+        <div class="calendar">
+            <div class="calendar-header">Октябрь 2026</div>
+            <div class="calendar-grid">
+                <span class="day-name">Пн</span>
+                <span class="day-name">Вт</span>
+                <span class="day-name">Ср</span>
+                <span class="day-name">Чт</span>
+                <span class="day-name">Пт</span>
+                <span class="day-name">Сб</span>
+                <span class="day-name">Вс</span>
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span>10</span>
+                <span>11</span>
+
+                <span>12</span>
+                <span>13</span>
+                <span>14</span>
+                <span class="wedding-day">15</span>
+                <span>16</span>
+                <span>17</span>
+                <span>18</span>
+
+                <span>19</span>
+                <span>20</span>
+                <span>21</span>
+                <span>22</span>
+                <span>23</span>
+                <span>24</span>
+                <span>25</span>
+
+                <span>26</span>
+                <span>27</span>
+                <span>28</span>
+                <span>29</span>
+                <span>30</span>
+                <span>31</span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ТРЕТЬЯ СЕКЦИЯ (ПЛАН ДНЯ) ===== -->
+    <section class="schedule-section">
+        <h2 class="schedule-title">План дня</h2>
+
+        <div class="timeline">
+            <!-- Элемент 1 -->
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="t1.png" alt="Церемония">
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-time">15.00</div>
+                    <div class="timeline-desc">ЦЕРЕМОНИЯ</div>
+                </div>
+            </div>
+
+            <!-- Элемент 2 -->
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="t2.png" alt="Свадебный ужин">
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-time">17.00</div>
+                    <div class="timeline-desc">СВАДЕБНЫЙ УЖИН</div>
+                </div>
+            </div>
+
+            <!-- Элемент 3 -->
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="t3.png" alt="Свадебный торт">
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-time">21.00</div>
+                    <div class="timeline-desc">СВАДЕБНЫЙ ТОРТ</div>
+                </div>
+            </div>
+
+            <!-- Элемент 4 -->
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="t4.png" alt="Окончание вечера">
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-time">23.00</div>
+                    <div class="timeline-desc">ОКОНЧАНИЕ ВЕЧЕРА</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== СЕКЦИЯ ДРЕСС-КОД ===== -->
+    <section class="dresscode-section">
+        <h2 class="dresscode-title">Дресс-код</h2>
+
+        <p class="dresscode-text">
+            Мы будем очень рады,
+            если вы поддержите
+            цветовую гамму
+            нашего торжества
+        </p>
+
+        <img src="dress.png" alt="Дресс-код" class="dresscode-image">
+    </section>
+
+
+    <!-- ===== СЕКЦИЯ ПОЖЕЛАНИЯ ===== -->
+<section class="wishes-section">
+    <h2 class="wishes-title">Пожелания</h2>
+
+    <div class="wishes-list">
+
+        <div class="wish-item">
+            <div class="wish-text">
+                Дорогие гости, вместо привычного «Горько!»
+                мы будем рады вашим тёплым объятиям,
+                аплодисментам и искренним улыбкам
+            </div>
+        </div>
+
+        <div class="wish-item">
+            <div class="wish-text">
+                Если вы хотите сделать нам подарок,
+                будем благодарны за подарок в конверте —
+                так мы сможем осуществить свою мечту
+            </div>
+        </div>
+
+        <div class="wish-item">
+            <div class="wish-text">
+                Мы очень любим детей, но, к сожалению,
+                наш праздник пройдёт без них.
+                Пожалуйста, проведите этот вечер
+                так, как мечтается — среди взрослых
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ===== СЕКЦИЯ ОБРАТНОГО ОТСЧЁТА ===== -->
+<section class="countdown-section">
+    <h2 class="countdown-title">До нашей свадьбы осталось...</h2>
+
+    <div class="countdown">
+        <div class="countdown-item">
+            <div class="countdown-value" id="days">000</div>
+            <div class="countdown-label">дней</div>
+        </div>
+        <div class="countdown-item">
+            <div class="countdown-value" id="hours">00</div>
+            <div class="countdown-label">часов</div>
+        </div>
+        <div class="countdown-item">
+            <div class="countdown-value" id="minutes">00</div>
+            <div class="countdown-label">минут</div>
+        </div>
+        <div class="countdown-item">
+            <div class="countdown-value" id="seconds">00</div>
+            <div class="countdown-label">секунд</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== СЕКЦИЯ RSVP ===== -->
+<section class="rsvp-section">
+    <h2 class="rsvp-title">Мы ждем Вас!</h2>
+
+    <p class="rsvp-text">
+        Пожалуйста, подтвердите
+        присутствие
+        до <br>1 сентября 2027
+    </p>
+
+    <form class="rsvp-form" id="rsvpForm">
+        <div class="rsvp-field">
+            <label class="rsvp-label" for="guestName">Имя гостя</label>
+            <input
+                class="rsvp-input"
+                type="text"
+                id="guestName"
+                name="guestName"
+                placeholder="Иван Иванов"
+                required
+            >
+        </div>
+
+        <div class="rsvp-field">
+            <label class="rsvp-label" for="guestCount">Сколько вас будет</label>
+            <select class="rsvp-input" id="guestCount" name="guestCount" required>
+                <option value="" disabled selected>Выберите количество</option>
+                <option value="1">1 гость</option>
+                <option value="2">2 гостя</option>
+                <option value="3">3 гостя</option>
+                <option value="4">4 гостя</option>
+                <option value="5">5 гостей</option>
+            </select>
+        </div>
+
+        <div class="rsvp-field">
+            <div class="rsvp-label">Сможете ли вы прийти?</div>
+            <div class="rsvp-radio-group">
+                <label class="rsvp-radio">
+                    <input type="radio" name="attendance" value="yes" required>
+                    <span>Обязательно буду</span>
+                </label>
+                <label class="rsvp-radio">
+                    <input type="radio" name="attendance" value="no">
+                    <span>К сожалению, не смогу</span>
+                </label>
+            </div>
+        </div>
+
+        <button type="submit" class="rsvp-button">Отправить</button>
+    </form>
+
+    <p class="rsvp-success" id="rsvpSuccess">Спасибо! Мы получили ваш ответ ♥</p>
+</section>
+
+
+
+    <!-- Аудиоплеер (скрытый) -->
+<audio id="weddingMusic" loop>
+    <source src="1.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио.
+</audio>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const musicBtn = document.getElementById('musicBtn');
+        const music = document.getElementById('weddingMusic');
+        let isPlaying = false;
+
+        musicBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                music.pause();
+                musicBtn.classList.remove('playing');
+                musicBtn.style.opacity = '1';
+            } else {
+                music.play().then(() => {
+                    musicBtn.classList.add('playing');
+                    musicBtn.style.opacity = '1';
+                }).catch(error => {
+                    console.log('Ошибка воспроизведения:', error);
+                    alert('Не удалось включить музыку. Проверьте, что файл 1.mp3 находится в папке с сайтом.');
+                });
+            }
+            isPlaying = !isPlaying;
+        });
+    });
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Дата свадьбы: 15 октября 2027, 15:00
+        const weddingDate = new Date(2027, 9, 15, 15, 0, 0).getTime();
+
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+
+        function updateCountdown() {
+            const now = Date.now();
+            const diff = weddingDate - now;
+
+            if (diff <= 0) {
+                daysEl.textContent = '000';
+                hoursEl.textContent = '00';
+                minutesEl.textContent = '00';
+                secondsEl.textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            daysEl.textContent = String(days).padStart(3, '0');
+            hoursEl.textContent = String(hours).padStart(2, '0');
+            minutesEl.textContent = String(minutes).padStart(2, '0');
+            secondsEl.textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('rsvpForm');
+        const success = document.getElementById('rsvpSuccess');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('guestName').value.trim();
+            const count = document.getElementById('guestCount').value;
+            const attendance = form.querySelector('input[name="attendance"]:checked');
+
+            if (!name || !count || !attendance) {
+                alert('Пожалуйста, заполните все поля');
+                return;
+            }
+
+            // Здесь можно отправить данные на сервер (fetch) или в Telegram-бота.
+            // Пока просто показываем сообщение об успехе.
+
+            form.style.display = 'none';
+            success.classList.add('visible');
+        });
+    });
+</script>
+
+</body>
+</html>
